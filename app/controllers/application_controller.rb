@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
-  
+
   def bad_method
     if params[:showtime]
       value = params[:six].to_i * params[:nine]
@@ -20,7 +20,13 @@ class ApplicationController < ActionController::Base
     # Should warn on self.verify_mode = OpenSSL::SSL::VERIFY_NONE
     self.verify_mode = OpenSSL::SSL::VERIFY_NONE
   end
-  
+
+  def merge_this_in
+    this_is_line = true
+    this_is_also_a_line = false
+    what = false
+  end
+
   def another_bad_method
     if params[:showtime]
       value = params[:six].to_i * params[:nine]
@@ -34,6 +40,9 @@ class ApplicationController < ActionController::Base
     end
   end
   
+  def something
+  end
+
   def yet_another_bad_method
     if params[:showtime]
       value = params[:six].to_i * params[:nine]
@@ -46,7 +55,7 @@ class ApplicationController < ActionController::Base
       false
     end
   end
-  
+
   def complex_method
     if params[:one]
       if params[:one0]
